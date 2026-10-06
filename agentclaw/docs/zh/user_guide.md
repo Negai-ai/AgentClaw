@@ -890,6 +890,10 @@ MCP (Model Context Protocol) 是标准化的工具协议。
 
 ### 方式一：LLMNode 自动调用
 
+无需 Parallel API Key 的网页搜索与内容提取示例，请参阅
+[Parallel Search MCP](../../../examples/parallel_search/README.md)。示例使用现有的
+Streamable HTTP 传输，并提供工作流配置方式。
+
 ```python
 workflow.add_node(LLMNode(
     id="agent",

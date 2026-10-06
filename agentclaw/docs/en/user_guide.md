@@ -847,6 +847,10 @@ Create `mcp.json`:
 
 ### LLMNode Auto Call
 
+For a runnable web search and page-fetch example without a Parallel API key,
+see [Parallel Search MCP](../../../examples/parallel_search/README.md). It uses
+the existing Streamable HTTP transport and includes workflow configuration.
+
 ```python
 workflow.add_node(LLMNode(
     id="agent",
