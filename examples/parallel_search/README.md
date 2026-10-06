@@ -5,13 +5,17 @@ This example uses the anonymous [Parallel Search MCP](https://docs.parallel.ai/i
 endpoint over Streamable HTTP. It needs no Parallel API key, model credentials,
 model inference, database, or running AgentClaw server.
 
-From the repository root, install AgentClaw and run:
+From the repository root, install the committed dependencies with
+[uv](https://docs.astral.sh/uv/) and run:
 
 ```bash
-pip install -e .
-python examples/parallel_search/search.py "Python asyncio TaskGroup documentation"
-python examples/parallel_search/search.py --url https://docs.python.org/3/library/asyncio-task.html
+uv sync --frozen
+uv run --frozen python examples/parallel_search/search.py "Python asyncio TaskGroup documentation"
+uv run --frozen python examples/parallel_search/search.py --url https://docs.python.org/3/library/asyncio-task.html
 ```
+
+Use the committed lockfile for this example: AgentClaw's current HTTP MCP client
+uses MCP SDK 1.x APIs that are no longer available in SDK 2.x.
 
 You can combine a query and `--url` in one invocation, or repeat `--url` for up to
 20 pages. The script loads the adjacent `mcp.json`, calls `web_search` and/or
